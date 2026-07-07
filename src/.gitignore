@@ -1,0 +1,28 @@
+# Laravel
+/vendor/
+/node_modules/
+.env
+.env.backup
+/public/storage
+/storage/*.key
+
+# Laravel storage
+/storage/logs/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/*
+
+# Docker (MySQLデータを確実に無視)
+/docker/mysql/data/
+/docker/mysql/data/*
+/docker/mysql/logs/
+/docker/mysql/
+/docker/php/logs/
+/docker/nginx/logs/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

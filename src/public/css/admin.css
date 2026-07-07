@@ -1,0 +1,489 @@
+.content {
+    margin: 30px;
+}
+
+.heading {
+    display: flex;
+    width: 1120px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.heading__title {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.heading__number {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.heading__kg {
+    font-size: 16px;
+}
+
+.heading__group {
+    width: 230px;
+}
+
+.heading__group:last-child {
+    border: none;
+    padding-right: 0;
+}
+
+.line {
+    height: 70px;
+    width: 1px;
+    background-color: #CDCDCD;
+}
+
+.weight-logs {
+    width: 1120px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.weight-logs__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+    height: 43px;
+}
+
+.weight-form__search {
+    width: 200px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.weight-form__search-input {
+    width: 100%;
+    font-size: 16px;
+    color: #4B4B4B;
+    padding: 10px;
+    appearance: none;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.weight-form__search-input::-webkit-calendar-picker-indicator {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
+
+.weight-form__search::after {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    content: "";
+    transform: translate(0, -50%);
+    background: url("/image/Polygon2.png") no-repeat;
+    width: 14px;
+    height: 8px;
+    z-index: 0;
+}
+
+.calender-between {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.weight-form__search--button {
+    cursor: pointer;
+    background-color: #919191;
+    width: 100px;
+    padding: 9px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.weight-logs__form {
+    display: flex;
+    align-items: center;
+}
+
+.weight-logs__create--button {
+    padding: 7.5px 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+    width: 160px;
+    border-radius: 12px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.weight-logs__table--row:first-child {
+    background-color: #fff;
+    position: relative;
+    border: none;
+}
+
+.weight-logs__table--row:first-child::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+}
+
+.weight-logs__table--header-date {
+    padding: 18px 40px;
+    width: 300px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weight-logs__table--header-weight {
+    padding: 18px 40px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weight-logs__table--header-calory {
+    padding: 18px 40px;
+    width: 260px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weight-logs__table--header-activity {
+    padding: 18px 40px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weight-logs__table--header-blank {
+    padding: 18px 40px;
+    width: 100px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.weight-logs__table--content {
+    padding: 18px 40px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.weight-logs__table--content:first-of-type {
+    text-align: left;
+}
+
+.weight-logs__table--row:last-child {
+    border: none;
+}
+
+.weight-logs__table--row:hover {
+    background-color: #F7F7F7;
+}
+
+.weight-logs__table--row {
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.weight-logs__table--button img {
+    width: 20px;
+    height: 100%;
+}
+
+.weight-logs__table--button {
+    width: 60px;
+    height: 20px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.pagination {
+    height: 35px;
+    width: 500px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous,
+.active,
+.other,
+.next {
+    padding: 3px 5px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    width: 33px;
+}
+
+.previous,
+.active,
+.other {
+    margin-right: 10px;
+}
+
+.previous,
+.other,
+.next {
+    background-color: #fff;
+}
+
+.pagination-link,
+.other a {
+    text-decoration: none;
+    color: #4B4B4B;
+}
+
+.active {
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+}
+
+.active span {
+    color: #fff;
+}
+
+.modal__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    z-index: 1010;
+}
+
+.modal__background.show {
+    display: flex;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 0 20px;
+}
+
+.modal-form {
+    text-align: left;
+}
+
+.modal-form__group {
+    margin-bottom: 20px;
+}
+
+.modal-form__heading {
+    margin-bottom: 5px;
+}
+
+.modal-form__heading-name {
+    font-size: 16px;
+    padding-right: 5px;
+}
+
+.modal-form__heading-required {
+    font-size: 12px;
+    background-color: #F65A5A;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.modal-form__content-date {
+    position: relative;
+}
+
+.modal-form__content-date::after {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    content: "";
+    transform: translate(0, -50%);
+    background: url("/image/Polygon2.png") no-repeat;
+    width: 14px;
+    height: 8px;
+    z-index: 0;
+}
+
+.modal-form__input-date {
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.modal-form__input-date::-webkit-calendar-picker-indicator {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
+
+.modal-form__input-weight {
+    width: 96%;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.modal-form__input-weight::placeholder {
+    color: #CDCDCD;
+}
+
+.modal-form__input-calories::placeholder {
+    color: #CDCDCD;
+}
+
+.modal-form__input-calories {
+    width: 96%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+}
+
+.modal-form__input-time {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.modal-form__textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.modal-form__textarea::placeholder {
+    color: #CDCDCD;
+}
+
+.modal-form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-form__button-back {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.modal-form__button-back--submit {
+    background-color: #E0DFDE;
+    border: none;
+    padding: 13px 10px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #0000001A;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal-form__button-create {
+    width: 200px;
+}
+
+.modal-form__button-create--submit {
+    width: 200px;
+    border-radius: 12px;
+    border: none;
+    padding: 13px 10px;
+    box-shadow: 0 4px 10px #0000001A;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+    cursor: pointer;
+}
+
+.modal-error {
+    margin-top: 10px;
+    color: #F65A5A;
+    font-size: 14px;
+}
+
+.modal-form__content-unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.weight-form__reset-button {
+    padding: 9px;
+    background: #fff;
+    border: 1px solid #919191;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: #919191;
+    font-size: 16px;
+    height: 42px;
+    width: 100px;
+    text-align: center;
+}
+
+.weight-form__search-result {
+    font-size: 14px;
+}
+
+.weight-form__search-result--total {
+    display: inline-block;
+    margin-left: 10px;
+}

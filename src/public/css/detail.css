@@ -1,0 +1,185 @@
+.detail-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.detail-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 0 20px;
+}
+
+.detail-form {
+    text-align: left;
+}
+
+.detail-form__group {
+    margin-bottom: 20px;
+}
+
+.detail-form__heading {
+    margin-bottom: 5px;
+}
+
+.detail-form__heading-name {
+    font-size: 16px;
+}
+
+.detail-form__content-date {
+    position: relative;
+}
+
+.detail-form__content-date::after {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    content: "";
+    transform: translate(0, -50%);
+    background: url("/image/Polygon2.png") no-repeat;
+    width: 14px;
+    height: 8px;
+    z-index: 0;
+}
+
+.detail-form__input-date {
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.detail-form__input-date::-webkit-calendar-picker-indicator {
+    z-index: 10;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+}
+
+.detail-form__input-weight {
+    width: 96%;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.detail-form__input-weight::placeholder {
+    color: #CDCDCD;
+}
+
+.detail-form__input-calories::placeholder {
+    color: #CDCDCD;
+}
+
+.detail-form__input-calories {
+    width: 96%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+}
+
+.detail-form__input-time {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.detail-form__textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.detail-form__textarea::placeholder {
+    color: #CDCDCD;
+}
+
+.detail-form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.detail-form__button-back {
+    margin-right: 20px;
+}
+
+.detail-form__button-back--link {
+    background-color: #E0DFDE;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    padding: 13px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #0000001A;
+    font-size: 16px;
+    font-weight: 600;
+    width: 200px;
+    text-align: center;
+}
+
+.detail-form__button-update {
+    width: 200px;
+}
+
+.detail-form__button-update--submit {
+    width: 200px;
+    border-radius: 12px;
+    border: none;
+    padding: 13px 10px;
+    box-shadow: 0 4px 10px #0000001A;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #A3A6E1, #FFABD9);
+    cursor: pointer;
+}
+
+.detail-error {
+    margin-top: 10px;
+    color: #F65A5A;
+    font-size: 14px;
+}
+
+.detail-form__content-unit {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.detail-form__button-delete {
+    position: absolute;
+    right: 20px;
+    bottom: 23px;
+}
+
+.detail-form__button-delete--submit {
+    width: 41px;
+    height: 44px;
+    background: inherit;
+    border: none;
+}
+
+.detail-form__button-delete--img {
+    width: 21px;
+    height: 24px;
+}

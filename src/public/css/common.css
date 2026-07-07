@@ -1,0 +1,84 @@
+* {
+    font-weight: 300;
+    color: #333333;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F9F9F9;
+}
+
+.header {
+    border-bottom: #CDCDCD 1px solid;
+    background-color: #fff;
+}
+
+.header__inner {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    margin: 0;
+    font-family: Lora;
+    color: #EC87EF;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.header__list {
+    margin: 0;
+    display: flex;
+}
+
+.header__list-item {
+    margin-left: 20px;
+}
+
+.header__form--target {
+    font-size: 16px;
+    background-color: #F7F7F7;
+    border: 1px solid #CDCDCD;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.header__form--target::before {
+    content: "";
+    background: url("/image/Vector.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 22.88px;
+    height: 24px;
+    transform: translate(0, -50%);
+}
+
+.header__form--logout {
+    font-size: 16px;
+    background-color: #F7F7F7;
+    border: 1px solid #CDCDCD;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.header__form--logout::before {
+    content: "";
+    background: url("/image/Logout.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 22.88px;
+    height: 22.93px;
+    transform: translate(0, -50%);
+}
