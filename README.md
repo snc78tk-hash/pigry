@@ -46,4 +46,4 @@ DB_PASSWORD=laravel_pass
 
 ## ER 図
 
-![image](public/image/pigry_er図.png)
+![image](https://github.com/user-attachments/assets/f35d25ab-8c65-4cad-a8b5-0011355fd3b4)
