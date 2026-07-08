@@ -13,82 +13,106 @@ use App\Http\Requests\WeightTargetRequest;
 
 class WeightController extends Controller
 {
-    public function weight(){
+    public function weight()
+    {
         return view('auth.register_step2');
     }
 
-    public function storeWeight(RegisterWeightRequest $request){
-        $createdAt=now();
-        $formattedDate=$createdAt->format('Y/m/d');
-        $userId=Auth::id();
+    public function storeWeight(RegisterWeightRequest $request)
+    {
+        $userId = Auth::id();
+
         WeightLog::create([
-            'user_id'=>$userId,
-            'date'=>$formattedDate,
-            'weight'=>$request->weight
+            'user_id' => $userId,
+            'date'    => now(), 
+            'weight'  => $request->weight,
         ]);
+
         WeightTarget::create([
-            'user_id'=>$userId,
-            'target_weight'=>$request->target_weight
+            'user_id'       => $userId,
+            'target_weight' => $request->target_weight,
         ]);
+
         return redirect('/weight_logs');
     }
 
-    public function admin(){
-        $userId=Auth::id();
-        $startDate='';
-        $endDate='';
-        $weightLogs=WeightLog::with('user')->where('user_id', $userId)->Paginate(8);
-        $latestWeightLog=WeightLog::with('user')->where('user_id', $userId)->orderBy('created_at', 'desc')->first();
-        $weightTarget=WeightTarget::with('user')->where('user_id', $userId)->orderBy('created_at', 'desc')->first();
+    public function admin()
+    {
+        $userId = Auth::id();
+
+        $startDate = '';
+        $endDate   = '';
+
+        $weightLogs = WeightLog::where('user_id', $userId)->paginate(8);
+        $latestWeightLog = WeightLog::where('user_id', $userId)->latest()->first();
+        $weightTarget = WeightTarget::where('user_id', $userId)->latest()->first();
+
         return view('admin', compact('weightLogs', 'weightTarget', 'latestWeightLog', 'startDate', 'endDate'));
     }
 
-    public function goalSetting(){
-        $userId=Auth::id();
-        $weightTarget=WeightTarget::with('user')->where('user_id', $userId)->first();
+    public function goalSetting()
+    {
+        $userId = Auth::id();
+        $weightTarget = WeightTarget::where('user_id', $userId)->first();
+
         return view('goal_setting', compact('weightTarget'));
     }
 
-    public function goalUpdate(WeightTargetRequest $request){
-        $weightTarget=$request->only(['target_weight']);
-        WeightTarget::find($request->id)->update($weightTarget);
+    public function goalUpdate(WeightTargetRequest $request)
+    {
+        $target = WeightTarget::findOrFail($request->id);
+        $target->update($request->only('target_weight'));
+
         return redirect('/weight_logs');
     }
 
-    public function store(WeightLogRequest $request){
-        $userId=Auth::id();
-        $weightLogs=$request->only(['date', 'weight', 'calories', 'exercise_time', 'exercise_content']);
-        $weightLogs['user_id']=$userId;
-        WeightLog::create($weightLogs);
-        return redirect('/weight_logs');
-    }
-
-    public function search(Request $request){
-        $userId=Auth::id();
-        $startDate=$request->start_date;
-        $endDate=$request->end_date;
-        $weightLogs=WeightLog::with('user')->where('user_id', $userId)->DateSearch($startDate, $endDate)->Paginate(8)->appends([
-            'start_date'=>$startDate,
-            'end_date'=>$endDate
+    public function store(WeightLogRequest $request)
+    {
+        WeightLog::create([
+            'user_id' => Auth::id(),
+            ...$request->validated(),
         ]);
-        $latestWeightLog=WeightLog::with('user')->where('user_id', $userId)->orderBy('created_at', 'desc')->first();
-        $weightTarget=WeightTarget::with('user')->where('user_id', $userId)->orderBy('created_at', 'desc')->first();
+
+        return redirect('/weight_logs');
+    }
+
+    public function search(Request $request)
+    {
+        $userId = Auth::id();
+        $startDate = $request->start_date;
+        $endDate   = $request->end_date;
+
+        $weightLogs = WeightLog::where('user_id', $userId)
+            ->dateSearch($startDate, $endDate)
+            ->paginate(8)
+            ->appends([
+                'start_date' => $startDate,
+                'end_date'   => $endDate,
+            ]);
+
+        $latestWeightLog = WeightLog::where('user_id', $userId)->latest()->first();
+        $weightTarget = WeightTarget::where('user_id', $userId)->latest()->first();
+
         return view('admin', compact('weightLogs', 'weightTarget', 'latestWeightLog', 'startDate', 'endDate'));
     }
 
-    public function detail($weightLogId){
-        $weightLog=WeightLog::find($weightLogId);
+    public function detail($weightLogId)
+    {
+        $weightLog = WeightLog::findOrFail($weightLogId);
         return view('detail', compact('weightLog'));
     }
 
-    public function update(WeightLogRequest $request, $weightLogId){
-        $weightLog=$request->only(['date', 'weight', 'calories', 'exercise_time', 'exercise_content']);
-        WeightLog::find($weightLogId)->update($weightLog);
+    public function update(WeightLogRequest $request, $weightLogId)
+    {
+        $log = WeightLog::findOrFail($weightLogId);
+        $log->update($request->validated());
+
         return redirect('/weight_logs');
     }
 
-    public function destroy($weightLogId){
-        WeightLog::find($weightLogId)->delete();
+    public function destroy($weightLogId)
+    {
+        WeightLog::findOrFail($weightLogId)->delete();
         return redirect('/weight_logs');
     }
 }
